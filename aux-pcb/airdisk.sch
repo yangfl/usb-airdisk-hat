@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:airdisk-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -310,8 +310,6 @@ F 3 "" H 6050 3200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6050 3100 6050 3200
-Wire Wire Line
-	5850 1750 5850 2100
 $Comp
 L power:GND #PWR0109
 U 1 1 5D3E7AFE
@@ -736,51 +734,14 @@ $EndComp
 $Comp
 L Connector:TestPoint 2V1
 U 1 1 5D0EF73D
-P 5850 1750
-F 0 "2V1" H 5908 1870 50  0000 L CNN
-F 1 "TestPoint" H 5908 1779 50  0000 L CNN
-F 2 "airdisk:TE_3-2199250-5" H 6050 1750 50  0001 C CNN
-F 3 "~" H 6050 1750 50  0001 C CNN
-	1    5850 1750
+P 5850 1600
+F 0 "2V1" H 5908 1720 50  0000 L CNN
+F 1 "TestPoint" H 5908 1629 50  0000 L CNN
+F 2 "airdisk:TE_3-2199250-5" H 6050 1600 50  0001 C CNN
+F 3 "~" H 6050 1600 50  0001 C CNN
+	1    5850 1600
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:TestPoint TP1
-U 1 1 5D125817
-P 2000 5950
-F 0 "TP1" H 2058 6070 50  0000 L CNN
-F 1 "TestPoint" H 2058 5979 50  0000 L CNN
-F 2 "airdisk:TE_3-2199250-5" H 2200 5950 50  0001 C CNN
-F 3 "~" H 2200 5950 50  0001 C CNN
-	1    2000 5950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2000 5950 2000 6050
-$Comp
-L Device:LED D1
-U 1 1 5D127CD8
-P 2000 6200
-F 0 "D1" V 2038 6083 50  0000 R CNN
-F 1 "LED" V 1947 6083 50  0000 R CNN
-F 2 "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2000 6200 50  0001 C CNN
-F 3 "~" H 2000 6200 50  0001 C CNN
-	1    2000 6200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector:TestPoint TP2
-U 1 1 5D1280AE
-P 2000 6450
-F 0 "TP2" H 1942 6477 50  0000 R CNN
-F 1 "TestPoint" H 1942 6568 50  0000 R CNN
-F 2 "airdisk:TE_3-2199250-5" H 2200 6450 50  0001 C CNN
-F 3 "~" H 2200 6450 50  0001 C CNN
-	1    2000 6450
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2000 6350 2000 6450
 $Comp
 L Connector:TestPoint TP3
 U 1 1 5D12A830
@@ -996,21 +957,34 @@ F 3 "~" H 6050 2100 50  0001 C CNN
 	1    5850 2100
 	0    -1   1    0   
 $EndComp
-Connection ~ 5850 2100
 Wire Wire Line
 	5850 2100 5850 2300
 $Comp
-L power:Earth #PWR0102
-U 1 1 5D176C8B
-P 1850 6450
-F 0 "#PWR0102" H 1850 6200 50  0001 C CNN
-F 1 "Earth" H 1850 6300 50  0001 C CNN
-F 2 "" H 1850 6450 50  0001 C CNN
-F 3 "~" H 1850 6450 50  0001 C CNN
-	1    1850 6450
+L Device:R R5
+U 1 1 5D276C22
+P 5850 1850
+F 0 "R5" H 5920 1896 50  0000 L CNN
+F 1 "0R" H 5920 1805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 5780 1850 50  0001 C CNN
+F 3 "~" H 5850 1850 50  0001 C CNN
+	1    5850 1850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1850 6450 2000 6450
-Connection ~ 2000 6450
+	5850 1600 5850 1700
+Wire Wire Line
+	5850 2000 5850 2100
+Connection ~ 5850 2100
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5D290D82
+P 5850 1600
+F 0 "TP1" H 5792 1627 50  0000 R CNN
+F 1 "TestPoint" H 5792 1718 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 6050 1600 50  0001 C CNN
+F 3 "~" H 6050 1600 50  0001 C CNN
+	1    5850 1600
+	0    -1   -1   0   
+$EndComp
+Connection ~ 5850 1600
 $EndSCHEMATC
